@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
 using MegaCrit.Sts2.Core.Nodes.Screens.TreasureRoomRelic;
 using MegaCrit.Sts2.Core.Runs;
+using SlayTheSpire2.LAN.Multiplayer.Helpers;
 
 // ReSharper disable UnusedMember.Global
 // ReSharper disable UnusedType.Global
@@ -15,6 +16,13 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
     internal class NTreasureRoomRelicCollectionReadyPatch
     {
         private static void Prefix(NTreasureRoomRelicCollection __instance)
+        {
+            // Guarded: a throw here would abort NTreasureRoomRelicCollection._Ready and soft-lock
+            // the treasure room.
+            PatchGuard.Run(nameof(NTreasureRoomRelicCollectionReadyPatch), () => AddRelicHolders(__instance));
+        }
+
+        private static void AddRelicHolders(NTreasureRoomRelicCollection __instance)
         {
             var runState = Traverse.Create(RunManager.Instance).Property("State").GetValue<RunState?>();
 
@@ -33,6 +41,13 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
         }
 
         private static void Postfix(NTreasureRoomRelicCollection __instance,
+            List<NTreasureRoomRelicHolder> ____multiplayerHolders)
+        {
+            PatchGuard.Run($"{nameof(NTreasureRoomRelicCollectionReadyPatch)}.Postfix",
+                () => BuildScrollableRelicGrid(__instance, ____multiplayerHolders));
+        }
+
+        private static void BuildScrollableRelicGrid(NTreasureRoomRelicCollection __instance,
             List<NTreasureRoomRelicHolder> ____multiplayerHolders)
         {
             if (____multiplayerHolders.Count > 4)

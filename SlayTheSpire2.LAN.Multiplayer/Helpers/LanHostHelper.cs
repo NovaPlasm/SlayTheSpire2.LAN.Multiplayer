@@ -16,6 +16,7 @@ using MegaCrit.Sts2.Core.Nodes.Screens.MainMenu;
 using MegaCrit.Sts2.Core.Platform;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves;
+using SlayTheSpire2.LAN.Multiplayer.Patchs.ENet;
 using SlayTheSpire2.LAN.Multiplayer.Services;
 
 // ReSharper disable MemberCanBePrivate.Global
@@ -42,60 +43,78 @@ namespace SlayTheSpire2.LAN.Multiplayer.Helpers
             try
             {
                 var netService = new NetHostGameService();
-                NetErrorInfo? netErrorInfo = null;
+                ENetHostStartHostPatch.LastError = null;
                 //Add one more max client to send the full lobby message
                 netService.StartENetHost(port, maxPlayers + 1);
+
+                var netErrorInfo = ENetHostStartHostPatch.LastError;
+                if (netErrorInfo.HasValue)
+                {
+                    ShowError(netErrorInfo.Value);
+                    return;
+                }
+
                 Log.Info($"HostGame open on port:{port}");
                 LanDiscoveryService.Instance.StartHosting(port, maxPlayers, gameMode.ToString());
-                if (!netErrorInfo.HasValue)
+
+                switch (gameMode)
                 {
-                    switch (gameMode)
+                    case GameMode.Standard:
                     {
-                        case GameMode.Standard:
-                        {
-                            var submenuType3 = stack.GetSubmenuType<NCharacterSelectScreen>();
-                            submenuType3.InitializeMultiplayerAsHost(netService, maxPlayers);
-                            stack.Push(submenuType3);
-                            break;
-                        }
-                        case GameMode.Daily:
-                        {
-                            var submenuType2 = stack.GetSubmenuType<NDailyRunScreen>();
-                            submenuType2.InitializeMultiplayerAsHost(netService);
-                            stack.Push(submenuType2);
-                            break;
-                        }
-                        default:
-                        {
-                            var submenuType = stack.GetSubmenuType<NCustomRunScreen>();
-                            submenuType.InitializeMultiplayerAsHost(netService, maxPlayers);
-                            stack.Push(submenuType);
-                            break;
-                        }
+                        var submenuType3 = stack.GetSubmenuType<NCharacterSelectScreen>();
+                        submenuType3.InitializeMultiplayerAsHost(netService, maxPlayers);
+                        stack.Push(submenuType3);
+                        break;
                     }
-                }
-                else
-                {
-                    var nErrorPopup = NErrorPopup.Create(netErrorInfo.Value);
-                    if (nErrorPopup != null)
+                    case GameMode.Daily:
                     {
-                        NModalContainer.Instance?.Add(nErrorPopup);
+                        var submenuType2 = stack.GetSubmenuType<NDailyRunScreen>();
+                        submenuType2.InitializeMultiplayerAsHost(netService);
+                        stack.Push(submenuType2);
+                        break;
+                    }
+                    default:
+                    {
+                        var submenuType = stack.GetSubmenuType<NCustomRunScreen>();
+                        submenuType.InitializeMultiplayerAsHost(netService, maxPlayers);
+                        stack.Push(submenuType);
+                        break;
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                var nErrorPopup2 = NErrorPopup.Create(new NetErrorInfo(NetError.InternalError, selfInitiated: false));
-                if (nErrorPopup2 != null)
-                {
-                    NModalContainer.Instance?.Add(nErrorPopup2);
-                }
-
-                throw;
+                // Swallowed on purpose: rethrowing only got the exception logged again by Godot,
+                // and it left the ENet host bound so the next attempt failed with CantCreate.
+                Log.Error($"Failed to start LAN host on port {port}: {ex}");
+                ShowError(new NetErrorInfo(NetError.InternalError, selfInitiated: false));
             }
             finally
             {
                 loadingOverlay.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Shows the network error modal and tears the half-started host down again, so the UDP
+        /// port is free and we are not advertising a lobby nobody can join.
+        /// </summary>
+        private static void ShowError(NetErrorInfo netErrorInfo)
+        {
+            try
+            {
+                LanDiscoveryService.Instance.StopHosting();
+                ENetHostStartHostPatch.ReleaseLastHost();
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to clean up after a failed LAN host: {ex}");
+            }
+
+            var nErrorPopup = NErrorPopup.Create(netErrorInfo);
+            if (nErrorPopup != null)
+            {
+                NModalContainer.Instance?.Add(nErrorPopup);
             }
         }
 
@@ -106,43 +125,46 @@ namespace SlayTheSpire2.LAN.Multiplayer.Helpers
             try
             {
                 var netService = new NetHostGameService();
-                NetErrorInfo? netErrorInfo = null;
+                ENetHostStartHostPatch.LastError = null;
                 netService.StartENetHost(port, maxPlayers + 1);
+
+                var netErrorInfo = ENetHostStartHostPatch.LastError;
+                if (netErrorInfo.HasValue)
+                {
+                    ShowError(netErrorInfo.Value);
+                    return;
+                }
+
                 Log.Info($"HostGame open on port:{port}");
                 var modeLabel = run.DailyTime.HasValue ? "Daily" : run.Modifiers.Count > 0 ? "Custom" : "Standard";
                 LanDiscoveryService.Instance.StartHosting(port, maxPlayers, modeLabel);
-                if (!netErrorInfo.HasValue)
+
+                if (run.Modifiers.Count > 0)
                 {
-                    if (run.Modifiers.Count > 0)
+                    if (run.DailyTime.HasValue)
                     {
-                        if (run.DailyTime.HasValue)
-                        {
-                            var submenuType = stack.GetSubmenuType<NDailyRunLoadScreen>();
-                            submenuType.InitializeAsHost(netService, run);
-                            stack.Push(submenuType);
-                        }
-                        else
-                        {
-                            var submenuType2 = stack.GetSubmenuType<NCustomRunLoadScreen>();
-                            submenuType2.InitializeAsHost(netService, run);
-                            stack.Push(submenuType2);
-                        }
+                        var submenuType = stack.GetSubmenuType<NDailyRunLoadScreen>();
+                        submenuType.InitializeAsHost(netService, run);
+                        stack.Push(submenuType);
                     }
                     else
                     {
-                        var submenuType3 = stack.GetSubmenuType<NMultiplayerLoadGameScreen>();
-                        submenuType3.InitializeAsHost(netService, run);
-                        stack.Push(submenuType3);
+                        var submenuType2 = stack.GetSubmenuType<NCustomRunLoadScreen>();
+                        submenuType2.InitializeAsHost(netService, run);
+                        stack.Push(submenuType2);
                     }
                 }
                 else
                 {
-                    var nErrorPopup = NErrorPopup.Create(netErrorInfo.Value);
-                    if (nErrorPopup != null)
-                    {
-                        NModalContainer.Instance?.Add(nErrorPopup);
-                    }
+                    var submenuType3 = stack.GetSubmenuType<NMultiplayerLoadGameScreen>();
+                    submenuType3.InitializeAsHost(netService, run);
+                    stack.Push(submenuType3);
                 }
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to start LAN host on port {port}: {ex}");
+                ShowError(new NetErrorInfo(NetError.InternalError, selfInitiated: false));
             }
             finally
             {

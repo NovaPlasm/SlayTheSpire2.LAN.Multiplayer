@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Nodes.Screens.Settings;
 using SlayTheSpire2.LAN.Multiplayer.Components;
+using SlayTheSpire2.LAN.Multiplayer.Helpers;
 using SlayTheSpire2.LAN.Multiplayer.Services;
 
 // ReSharper disable UnusedMember.Global
@@ -12,9 +13,23 @@ using SlayTheSpire2.LAN.Multiplayer.Services;
 
 namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
 {
+    /// <summary>Localization keys for the LAN rows this mod adds to the general settings panel.</summary>
+    internal static class LanSettingsLocKeys
+    {
+        internal const string HostPort = "SlayTheSpire2.LAN.Multiplayer.HOST_PORT";
+        internal const string HostMaxPlayers = "SlayTheSpire2.LAN.Multiplayer.HOST_MAX_PLAYERS";
+        internal const string PlayerName = "SlayTheSpire2.LAN.Multiplayer.PLAYER_NAME";
+        internal const string NetId = "SlayTheSpire2.LAN.Multiplayer.NET_ID";
+    }
+
     [HarmonyPatch(typeof(NSettingsScreen), "_Ready")]
     internal class NSettingsScreenReadyPatch
     {
+        private const string HostPortKey = LanSettingsLocKeys.HostPort;
+        private const string HostMaxPlayersKey = LanSettingsLocKeys.HostMaxPlayers;
+        private const string PlayerNameKey = LanSettingsLocKeys.PlayerName;
+        private const string NetIdKey = LanSettingsLocKeys.NetId;
+
         [HarmonyReversePatch]
         [HarmonyPatch(typeof(NSettingsPanel), "RefreshSize")]
         private static void RefreshSize(NSettingsPanel instance)
@@ -23,6 +38,13 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
         }
 
         private static void Prefix(NSettingsScreen __instance)
+        {
+            // Guarded: a throw here would abort NSettingsScreen._Ready and break the whole
+            // settings screen, not just our four extra rows.
+            PatchGuard.Run(nameof(NSettingsScreenReadyPatch), () => AddLanSettings(__instance));
+        }
+
+        private static void AddLanSettings(NSettingsScreen __instance)
         {
             var moddingNode = __instance.GetNode("%Modding");
 
@@ -59,7 +81,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
             vBoxContainerNode.MoveChild(hostPort, hostPortDivider.GetIndex() + 1);
 
             var hostPortLabel = (MegaRichTextLabel)hostPort.GetNode("Label");
-            hostPortLabel.SetTextAutoSize("Host Port");
+            hostPortLabel.SetTextAutoSize(LocalizationHelper.Text("settings_ui", HostPortKey));
 
             var hostMaxPlayersDivider = (ColorRect)__instance.GetNode("%ModdingDivider").Duplicate();
             hostMaxPlayersDivider.Name = "HostMaxPlayersDivider";
@@ -92,7 +114,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
             vBoxContainerNode.MoveChild(hostMaxPlayers, hostMaxPlayersDivider.GetIndex() + 1);
 
             var hostMaxPlayersLabel = (MegaRichTextLabel)hostMaxPlayers.GetNode("Label");
-            hostMaxPlayersLabel.SetTextAutoSize("Host Max Players");
+            hostMaxPlayersLabel.SetTextAutoSize(LocalizationHelper.Text("settings_ui", HostMaxPlayersKey));
 
             var playerNameDivider = (ColorRect)__instance.GetNode("%ModdingDivider").Duplicate();
             playerNameDivider.Name = "PlayerNameDivider";
@@ -134,7 +156,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
             vBoxContainerNode.MoveChild(playerName, playerNameDivider.GetIndex() + 1);
 
             var playerNameLabel = (MegaRichTextLabel)playerName.GetNode("Label");
-            playerNameLabel.SetTextAutoSize("Player Name");
+            playerNameLabel.SetTextAutoSize(LocalizationHelper.Text("settings_ui", PlayerNameKey));
 
             var netIdDivider = (ColorRect)__instance.GetNode("%ModdingDivider").Duplicate();
             netIdDivider.Name = "NetIDDivider";
@@ -164,7 +186,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
             };
 
             var netIdLabel = (MegaRichTextLabel)netId.GetNode("Label");
-            netIdLabel.SetTextAutoSize("NetID");
+            netIdLabel.SetTextAutoSize(LocalizationHelper.Text("settings_ui", NetIdKey));
 
             vBoxContainerNode.AddChildSafely(netId);
             vBoxContainerNode.MoveChild(netId, netIdDivider.GetIndex() + 1);
@@ -186,16 +208,32 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
 
         private static void Prefix(NSettingsScreen __instance)
         {
-            var content = __instance.GetNode<NSettingsPanel>("%GeneralSettings").Content;
+            // Guarded: a throw here would abort NSettingsScreen.LocalizeLabels, which the game
+            // calls from _Ready and on every language change.
+            PatchGuard.Run(nameof(NSettingsScreenLocalizeLabelsPatch), () =>
+            {
+                var content = __instance.GetNode<NSettingsPanel>("%GeneralSettings").Content;
 
-            LocHelper(content.GetNode<Node>("HostPort"),
-                new LocString("settings_ui", "SlayTheSpire2.LAN.Multiplayer.HOST_PORT"));
-            LocHelper(content.GetNode<Node>("HostMaxPlayers"),
-                new LocString("settings_ui", "SlayTheSpire2.LAN.Multiplayer.HOST_MAX_PLAYERS"));
-            LocHelper(content.GetNode<Node>("PlayerName"),
-                new LocString("settings_ui", "SlayTheSpire2.LAN.Multiplayer.PLAYER_NAME"));
-            LocHelper(content.GetNode<Node>("NetID"),
-                new LocString("settings_ui", "SlayTheSpire2.LAN.Multiplayer.NET_ID"));
+                Localize(content, "HostPort", LanSettingsLocKeys.HostPort);
+                Localize(content, "HostMaxPlayers", LanSettingsLocKeys.HostMaxPlayers);
+                Localize(content, "PlayerName", LanSettingsLocKeys.PlayerName);
+                Localize(content, "NetID", LanSettingsLocKeys.NetId);
+            });
+        }
+
+        private static void Localize(Node content, string nodeName, string key)
+        {
+            var settingsLineNode = content.GetNodeOrNull(nodeName);
+            if (settingsLineNode == null)
+                return;
+
+            // LocHelper resolves the LocString itself and throws on an unknown key. When our
+            // localization files were not merged, leave the text set in NSettingsScreenReadyPatch
+            // (which already falls back to built-in English) instead.
+            if (!LocalizationHelper.Exists("settings_ui", key))
+                return;
+
+            LocHelper(settingsLineNode, new LocString("settings_ui", key));
         }
     }
 }

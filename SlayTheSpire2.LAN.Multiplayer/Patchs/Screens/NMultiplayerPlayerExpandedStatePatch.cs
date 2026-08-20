@@ -3,11 +3,11 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Helpers;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Nodes.Multiplayer;
 using MegaCrit.Sts2.Core.Nodes.Screens.CardLibrary;
 using MegaCrit.Sts2.Core.Nodes.Screens.Map;
 using MegaCrit.Sts2.Core.Runs;
+using SlayTheSpire2.LAN.Multiplayer.Helpers;
 using SlayTheSpire2.LAN.Multiplayer.Services;
 
 // ReSharper disable UnusedMember.Global
@@ -27,7 +27,15 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
 
         private static void Prefix(NMultiplayerPlayerExpandedState __instance, Player ____player)
         {
-            if (____player.NetId != RunManager.Instance.NetService.NetId)
+            // Guarded: a throw here would abort NMultiplayerPlayerExpandedState._Ready and break
+            // the in-run player panel.
+            PatchGuard.Run(nameof(NMultiplayerPlayerExpandedStateReadyPatch),
+                () => AddDisableDrawingTickbox(__instance, ____player));
+        }
+
+        private static void AddDisableDrawingTickbox(NMultiplayerPlayerExpandedState __instance, Player player)
+        {
+            if (player.NetId != RunManager.Instance.NetService.NetId)
             {
                 var container = __instance.GetNode("ScreenContents/Container");
 
@@ -44,20 +52,20 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
                 container.AddChildSafely(disableDrawing);
                 container.MoveChild(disableDrawing, 0);
 
-                disableDrawing.SetLabel(new LocString("gameplay_ui", "SlayTheSpire2.LAN.Multiplayer.DISABLE_DRAWING")
-                    .GetFormattedText());
+                disableDrawing.SetLabel(LocalizationHelper.Text("gameplay_ui",
+                    "SlayTheSpire2.LAN.Multiplayer.DISABLE_DRAWING"));
 
                 var lanMapDrawingsService = LanMapDrawingsService.Instance;
 
                 disableDrawing.IsTicked =
-                    lanMapDrawingsService.DisableDrawingHashSet.Contains(____player.NetId);
+                    lanMapDrawingsService.DisableDrawingHashSet.Contains(player.NetId);
 
                 disableDrawing.Toggled += tickBox =>
                 {
                     if (NMapScreen.Instance == null)
                         return;
 
-                    var drawingState = GetDrawingStateForPlayer(NMapScreen.Instance.Drawings, ____player.NetId);
+                    var drawingState = GetDrawingStateForPlayer(NMapScreen.Instance.Drawings, player.NetId);
 
                     var drawViewport = Traverse.Create(drawingState).Field("drawViewport").GetValue<SubViewport>();
 
@@ -70,7 +78,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
                                 line2D.Visible = false;
                             }
 
-                            lanMapDrawingsService.DisableDrawingHashSet.Add(____player.NetId);
+                            lanMapDrawingsService.DisableDrawingHashSet.Add(player.NetId);
                         }
                         else
                         {
@@ -79,7 +87,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
                                 line2D.Visible = true;
                             }
 
-                            lanMapDrawingsService.DisableDrawingHashSet.Remove(____player.NetId);
+                            lanMapDrawingsService.DisableDrawingHashSet.Remove(player.NetId);
                         }
                     }
                 };

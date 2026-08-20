@@ -3,6 +3,7 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Runs;
+using SlayTheSpire2.LAN.Multiplayer.Helpers;
 using Control = Godot.Control;
 
 // ReSharper disable UnusedMember.Global
@@ -14,6 +15,14 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
     internal class NRestSiteRoomReadyPatch
     {
         private static void Prefix(NRestSiteRoom __instance, IRunState ____runState,
+            List<Control> ____characterContainers)
+        {
+            // Guarded: a throw here would abort NRestSiteRoom._Ready and soft-lock the run.
+            PatchGuard.Run(nameof(NRestSiteRoomReadyPatch),
+                () => AddExtraCharacters(__instance, ____runState, ____characterContainers));
+        }
+
+        private static void AddExtraCharacters(NRestSiteRoom __instance, IRunState ____runState,
             List<Control> ____characterContainers)
         {
             if (____runState.Players.Count > 4)
@@ -55,6 +64,12 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
         }
 
         private static void Postfix(NRestSiteRoom __instance, IRunState ____runState)
+        {
+            PatchGuard.Run($"{nameof(NRestSiteRoomReadyPatch)}.Postfix",
+                () => AddExtraRestSites(__instance, ____runState));
+        }
+
+        private static void AddExtraRestSites(NRestSiteRoom __instance, IRunState ____runState)
         {
             if (____runState.Players.Count > 4)
             {

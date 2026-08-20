@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Nodes.Screens.DailyRun;
 using MegaCrit.Sts2.Core.Nodes.Screens.MainMenu;
 using MegaCrit.Sts2.Core.Platform;
 using SlayTheSpire2.LAN.Multiplayer.Components;
+using SlayTheSpire2.LAN.Multiplayer.Helpers;
 using SlayTheSpire2.LAN.Multiplayer.Services;
 
 // ReSharper disable UnusedMember.Global
@@ -29,10 +30,15 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
 
         private static void Prefix(NSubmenu __instance)
         {
-            var ipAddressInfoPanel = IPAddressInfoPanel.Create();
-            ipAddressInfoPanel.Name = "IPAddressPanel";
-            ipAddressInfoPanel.Visible = false;
-            __instance.AddChildSafely(ipAddressInfoPanel);
+            // Guarded: this runs inside the game's _Ready. A throw here (e.g. a missing mod
+            // localization key) would abort _Ready and leave the screen unusable.
+            PatchGuard.Run(nameof(RunScreenReadyPatchs), () =>
+            {
+                var ipAddressInfoPanel = IPAddressInfoPanel.Create();
+                ipAddressInfoPanel.Name = "IPAddressPanel";
+                ipAddressInfoPanel.Visible = false;
+                __instance.AddChildSafely(ipAddressInfoPanel);
+            });
         }
     }
 
@@ -50,8 +56,11 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
 
         private static void Prefix(NSubmenu __instance, INetGameService gameService)
         {
-            if (gameService.Platform == PlatformType.None)
+            PatchGuard.Run($"{nameof(RunScreenInitializeAsHostPatchs)}.Prefix", () =>
             {
+                if (gameService.Platform != PlatformType.None)
+                    return;
+
                 var runScreenService = RunScreenService.Instance;
 
                 switch (__instance)
@@ -66,13 +75,16 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
                         runScreenService.CustomRunScreen = customRunScreen;
                         break;
                 }
-            }
+            });
         }
 
         private static void Postfix(NSubmenu __instance, INetGameService gameService)
         {
-            if (__instance.GetNode("IPAddressPanel") is IPAddressInfoPanel ipAddressInfoPanel)
+            PatchGuard.Run($"{nameof(RunScreenInitializeAsHostPatchs)}.Postfix", () =>
             {
+                if (__instance.GetNodeOrNull("IPAddressPanel") is not IPAddressInfoPanel ipAddressInfoPanel)
+                    return;
+
                 if (gameService.Platform == PlatformType.None)
                 {
                     ipAddressInfoPanel.Initialize();
@@ -82,7 +94,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
                 {
                     ipAddressInfoPanel.Visible = false;
                 }
-            }
+            });
         }
     }
 
@@ -100,8 +112,11 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
 
         private static void Prefix(NSubmenu __instance, INetGameService gameService)
         {
-            if (gameService.Platform == PlatformType.None)
+            PatchGuard.Run($"{nameof(RunScreenInitializeAsClientPatchs)}.Prefix", () =>
             {
+                if (gameService.Platform != PlatformType.None)
+                    return;
+
                 var runScreenService = RunScreenService.Instance;
 
                 switch (__instance)
@@ -116,15 +131,18 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
                         runScreenService.CustomRunScreen = customRunScreen;
                         break;
                 }
-            }
+            });
         }
 
         private static void Postfix(NSubmenu __instance)
         {
-            if (__instance.GetNode("IPAddressPanel") is IPAddressInfoPanel ipAddressInfoPanel)
+            PatchGuard.Run($"{nameof(RunScreenInitializeAsClientPatchs)}.Postfix", () =>
             {
-                ipAddressInfoPanel.Visible = false;
-            }
+                if (__instance.GetNodeOrNull("IPAddressPanel") is IPAddressInfoPanel ipAddressInfoPanel)
+                {
+                    ipAddressInfoPanel.Visible = false;
+                }
+            });
         }
     }
 
@@ -142,10 +160,13 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
 
         private static void Postfix(NSubmenu __instance)
         {
-            if (__instance.GetNode("IPAddressPanel") is IPAddressInfoPanel ipAddressInfoPanel)
+            PatchGuard.Run($"{nameof(RunScreenInitializeSingleplayerPatchs)}.Postfix", () =>
             {
-                ipAddressInfoPanel.Visible = false;
-            }
+                if (__instance.GetNodeOrNull("IPAddressPanel") is IPAddressInfoPanel ipAddressInfoPanel)
+                {
+                    ipAddressInfoPanel.Visible = false;
+                }
+            });
         }
     }
 }

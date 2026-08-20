@@ -41,12 +41,9 @@ namespace SlayTheSpire2.LAN.Multiplayer.Services
 
         private static bool MergeLanguage(LocManager locManager, string language)
         {
-            var dir = Path.Combine(ModDir, "localization", language);
-            if (!Directory.Exists(dir))
-            {
-                Log.Warn($"[LAN Multiplayer] Localization dir not found: {dir}");
+            var dir = FindLanguageDir(language);
+            if (dir == null)
                 return false;
-            }
 
             foreach (var file in Directory.GetFiles(dir, "*.json"))
             {
@@ -68,6 +65,33 @@ namespace SlayTheSpire2.LAN.Multiplayer.Services
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Locates the localization folder for a language. Normally it sits next to the assembly,
+        /// but tolerate the mod being installed with the DLL one level deeper as well.
+        /// </summary>
+        private static string? FindLanguageDir(string language)
+        {
+            var parentDir = Path.GetDirectoryName(ModDir);
+
+            string?[] roots = [ModDir, parentDir];
+
+            foreach (var root in roots)
+            {
+                if (string.IsNullOrEmpty(root))
+                    continue;
+
+                var dir = Path.Combine(root, "localization", language);
+                if (Directory.Exists(dir))
+                    return dir;
+            }
+
+            Log.Warn(
+                $"[LAN Multiplayer] Localization dir not found for language={language} under {ModDir}; " +
+                "falling back to built-in English text. Copy the mod's localization folder next to the DLL.");
+
+            return null;
         }
     }
 }

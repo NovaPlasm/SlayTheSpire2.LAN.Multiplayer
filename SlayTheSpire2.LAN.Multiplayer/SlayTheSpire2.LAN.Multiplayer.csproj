@@ -4,8 +4,9 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.6.3.0</AssemblyVersion>
-    <FileVersion>1.6.3.0</FileVersion>
+    <!-- Keep in sync with mod.json so the loader log identifies the build. -->
+    <AssemblyVersion>1.7.0.0</AssemblyVersion>
+    <FileVersion>1.7.0.0</FileVersion>
     <GodotProjectDir>$(MSBuildProjectDirectory)</GodotProjectDir>
     <!-- Override in Directory.Build.props: <STS2GameDir>path/to/data_sts2_windows_x86_64</STS2GameDir> -->
     <STS2GameDir Condition="'$(STS2GameDir)' == ''">D:\Slay the Spire 2\data_sts2_windows_x86_64</STS2GameDir>
@@ -13,6 +14,18 @@
 
   <ItemGroup>
     <PackageReference Include="Godot.SourceGenerators" Version="4.5.1" />
+  </ItemGroup>
+
+  <!--
+    The mod ships loose localization JSON (has_pck=false) and LocalizationFixService reads it
+    from the directory the assembly lives in. Copy it next to the DLL so the build output is a
+    complete, installable mod folder - without this every mod loc key throws a LocException.
+  -->
+  <ItemGroup>
+    <None Include="..\mod.json" CopyToOutputDirectory="PreserveNewest" Link="mod.json" />
+    <None Include="..\mod_image.png" CopyToOutputDirectory="PreserveNewest" Link="mod_image.png" />
+    <None Include="..\localization\**\*.json" CopyToOutputDirectory="PreserveNewest"
+          Link="localization\%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 
   <ItemGroup>

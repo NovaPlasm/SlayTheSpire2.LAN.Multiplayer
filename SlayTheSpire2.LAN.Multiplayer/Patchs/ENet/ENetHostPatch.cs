@@ -102,21 +102,50 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.ENet
     [HarmonyPatch(typeof(ENetHost), "StartHost")]
     internal class ENetHostStartHostPatch
     {
+        /// <summary>
+        /// Error of the most recent host attempt, or null when it succeeded. Callers cannot read
+        /// StartHost's return value through NetHostGameService, so it is recorded here instead.
+        /// </summary>
+        internal static NetErrorInfo? LastError;
+
+        private static ENetConnection? _lastConnection;
+
         private static bool Prefix(ushort port, int maxClients, Logger ____logger, ref ENetConnection? ____connection,
             ref bool ____isConnected, ref NetErrorInfo? __result)
         {
+            LastError = null;
+            _lastConnection = null;
+
             ____connection = new ENetConnection();
             var error = ____connection.CreateHostBound("0.0.0.0", port, maxClients);
             if (error != Error.Ok)
             {
                 ____logger.Error($"Failed to create host! {error}");
                 __result = new NetErrorInfo(error);
+                LastError = __result;
                 return false;
             }
 
             ____isConnected = true;
+            _lastConnection = ____connection;
 
             return false;
+        }
+
+        /// <summary>
+        /// Releases the UDP socket of the most recent host. Without this, a host attempt that dies
+        /// after StartHost (for example while pushing the character select screen) leaves the port
+        /// bound for the rest of the session and every retry fails with CantCreate.
+        /// </summary>
+        internal static void ReleaseLastHost()
+        {
+            var connection = _lastConnection;
+            _lastConnection = null;
+
+            if (connection == null || !GodotObject.IsInstanceValid(connection))
+                return;
+
+            connection.Destroy();
         }
     }
 }

@@ -20,6 +20,13 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
     {
         private static void Prefix(NMultiplayerSubmenu __instance)
         {
+            // Guarded: a throw here would abort NMultiplayerSubmenu._Ready and break the vanilla
+            // multiplayer menu along with our LAN buttons.
+            PatchGuard.Run(nameof(NMultiplayerSubmenuReadyPatch), () => AddLanButtons(__instance));
+        }
+
+        private static void AddLanButtons(NMultiplayerSubmenu __instance)
+        {
             var buttonContainerNode = __instance.GetNode("ButtonContainer");
 
             var lanHostButton = (NSubmenuButton)buttonContainerNode.GetNode("HostButton").Duplicate();

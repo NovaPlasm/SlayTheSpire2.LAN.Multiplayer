@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.addons.mega_text;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.Fonts;
+using SlayTheSpire2.LAN.Multiplayer.Helpers;
 
 namespace SlayTheSpire2.LAN.Multiplayer.Components
 {
@@ -62,8 +63,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Components
 
         private void RefreshLabel()
         {
-            var locString = new LocString("main_menu_ui", LocKeyPrefix);
-            SetTextAutoSize(locString.GetFormattedText());
+            SetTextAutoSize(LocalizationHelper.Text("main_menu_ui", LocKeyPrefix));
             this.ApplyLocaleFontSubstitution(FontType.Regular, ThemeConstants.Label.Font);
         }
     }

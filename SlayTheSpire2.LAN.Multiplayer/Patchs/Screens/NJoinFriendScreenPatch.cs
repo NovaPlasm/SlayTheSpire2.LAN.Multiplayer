@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
 using MegaCrit.Sts2.Core.Nodes.Screens.MainMenu;
 using SlayTheSpire2.LAN.Multiplayer.Components;
+using SlayTheSpire2.LAN.Multiplayer.Helpers;
 using SlayTheSpire2.LAN.Multiplayer.Services;
 
 // ReSharper disable UnusedMember.Global
@@ -35,6 +36,13 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
         internal static AddressLineEdit? AddressInput;
 
         private static void Prefix(NJoinFriendScreen __instance)
+        {
+            // Guarded: a throw here would abort NJoinFriendScreen._Ready and break the vanilla
+            // Steam join screen too.
+            PatchGuard.Run(nameof(NJoinFriendScreenReadyPatch), () => BuildLanOverlay(__instance));
+        }
+
+        private static void BuildLanOverlay(NJoinFriendScreen __instance)
         {
             var refreshButtonRef = __instance.GetNode<NJoinFriendRefreshButton>("%RefreshButton");
 
@@ -155,6 +163,14 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
 
         private static bool Prefix(NJoinFriendScreen __instance)
         {
+            // Guarded: returning true on failure lets the vanilla Steam friend scan run rather
+            // than leaving the player on a dead screen.
+            return PatchGuard.Run(nameof(NJoinFriendScreenOnSubmenuOpenedPatch),
+                () => OpenSubmenu(__instance), true);
+        }
+
+        private static bool OpenSubmenu(NJoinFriendScreen __instance)
+        {
             var traverse = Traverse.Create(__instance);
             var buttonContainer = traverse.Field("_buttonContainer").GetValue<Control>();
             var noFriendsLabel = traverse.Field("_noFriendsLabel").GetValue<MegaLabel>();
@@ -163,11 +179,19 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
             var refreshButton = traverse.Field("_refreshButton").GetValue<Control>();
             var titleLabel = __instance.GetNode<MegaLabel>("TitleLabel");
 
+            var lanOverlay = NJoinFriendScreenReadyPatch.LanOverlay;
+            var hasLanOverlay = lanOverlay != null && GodotObject.IsInstanceValid(lanOverlay);
+
+            // Without the overlay (its construction failed) LAN mode would just be a blank screen,
+            // so fall back to the vanilla Steam friend list instead.
+            if (!hasLanOverlay)
+                LanJoinMode.IsActive = false;
+
             if (!LanJoinMode.IsActive)
             {
                 // ── Steam mode: hide LAN overlay, restore screen to normal ──
-                if (NJoinFriendScreenReadyPatch.LanOverlay != null)
-                    NJoinFriendScreenReadyPatch.LanOverlay.Visible = false;
+                if (hasLanOverlay)
+                    lanOverlay!.Visible = false;
 
                 buttonContainer.Visible = true;
                 refreshButton.Visible = true;
@@ -185,8 +209,7 @@ namespace SlayTheSpire2.LAN.Multiplayer.Patchs.Screens
             refreshButton.Visible = false;
             titleLabel.SetTextAutoSize("LAN Lobby");
 
-            if (NJoinFriendScreenReadyPatch.LanOverlay != null)
-                NJoinFriendScreenReadyPatch.LanOverlay.Visible = true;
+            lanOverlay!.Visible = true;
 
             // Reset lobby list and show scanning state
             var lobbyVBox = NJoinFriendScreenReadyPatch.LanLobbyVBox;
