@@ -1,0 +1,586 @@
+MegaDot v4.5.1.m.12.mono.custom_build - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4070 Ti SUPER
+WARNING: PSO caching is not implemented yet in the Direct3D 12 driver.
+   at: pipeline_cache_create (drivers/d3d12/rendering_device_driver_d3d12.cpp:4469)
+
+FMOD Sound System: Successfully initialized
+[INFO] Found release_info.json at: E:\Steam\steamapps\common\Slay the Spire 2\release_info.json
+[INFO] [Sentry.NET] Initialized: env=development, release=v0.107.1
+[INFO] Steamworks: attempting initialization...
+[INFO] Steam is running: True
+[INFO] Steamworks initialization succeeded!
+[INFO] Steam is enabled, we will write saves to steam storage. Enabled for account: True, app: True 
+[INFO] Registered 11 migrations
+[INFO] Current save versions: PrefsSave v2; ProfileSave v2; SerializableProgress v21; RunHistory v9; SerializableRun v16; SettingsSave v5
+[INFO] Found mod manifest file E:\Steam\steamapps\common\Slay the Spire 2\mods\SlayTheSpire2.LAN.Multiplayer\mod.json
+[WARN] Mod SlayTheSpire2.LAN.Multiplayer does not declare min game version. Assuming that it is supported.
+[INFO] Loading assembly DLL E:\Steam\steamapps\common\Slay the Spire 2\mods\SlayTheSpire2.LAN.Multiplayer\SlayTheSpire2.LAN.Multiplayer.dll
+[INFO] Calling initializer method of type SlayTheSpire2.LAN.Multiplayer.Plugin for SlayTheSpire2.LAN.Multiplayer, Version=1.6.3.0, Culture=neutral, PublicKeyToken=null
+[INFO] Finished mod initialization for 'LAN Multiplayer' (SlayTheSpire2.LAN.Multiplayer).
+[INFO]  --- RUNNING MODDED! --- Loaded 1 mods (1 total)
+[Sentry.GDExtension] should_sample callable set
+[WARN] Asset not cached: res://scenes/debug/dev_console.tscn
+[INFO] Syncing cloud save files to the local save directory
+[WARN] Asset not cached: res://scenes/cards/card.tscn
+[WARN] Asset not cached: res://scenes/cards/holders/grid_card_holder.tscn
+[INFO] AtlasManager: Loaded ui_atlas with 102 sprites
+[INFO] AtlasManager: Loaded compressed with 45 sprites
+[INFO] Loading locale path=res://localization/eng
+[WARN] [LAN Multiplayer] Localization dir not found: E:\Steam\steamapps\common\Slay the Spire 2\mods\SlayTheSpire2.LAN.Multiplayer\localization\eng
+[WARN] [LAN Multiplayer] Localization dir not found: E:\Steam\steamapps\common\Slay the Spire 2\mods\SlayTheSpire2.LAN.Multiplayer\localization\eng
+[INFO] ModelIdSerializationCache initialized. Categories: 20 Entries: 1622 Epochs: 57 Hash: 3954186980
+[Sentry.GDExtension] Initialized: env=playtesters, release=v0.107.1
+[INFO] Profile-scoped data path initialized: user://steam/76561198058021070/modded/profile1
+[INFO] [Sentry.NET] Is running modded
+[INFO] [Sentry.NET] Shutting down because event reporting is disabled.
+[INFO] [Sentry.NET] Shutting down
+[Sentry.GDExtension] Shutting down
+[INFO] AtlasManager: Loaded controller_atlas with 112 sprites
+[INFO] MuteInBackground: FocusIn received [tween=False, msSinceFocusOut=2753, windowFocused=True]
+[INFO] Applying display settings...
+  FULLSCREEN: True
+  ASPECT_RATIO: (SixteenByNine)
+  TARGET_DISPLAY: (1)
+  WINDOW_SIZE: (1920, 1080)
+  POSITION: (-1, -1)
+[INFO] [Display] Min size: (64, 64) Max size: (16384, 16384)
+[INFO] [Display] Setting FULLSCREEN on Display: 2 of 2
+[INFO] Window changed! New size: (1918, 1080)
+[INFO] Window changed! New size: (1934, 1119)
+[INFO] Window changed! New size: (2560, 1440)
+[INFO] VSync: Adaptive
+[INFO] SteamStatsManager: Global stats received (found=True), architect damage = 352506302569
+[INFO] SteamStatsManager: User stats received
+[INFO] === Godot OS Debug Information ===
+Timestamp: 08/19/2026 20:07:46
+OS: Windows
+OS Version: 10.0.26200
+Distribution Name: Windows
+Device Model: MS-7D25
+Is Debug Build: False
+Is Sandboxed: False
+Executable Path: E:/Steam/steamapps/common/Slay the Spire 2/SlayTheSpire2.exe
+Data Directory: C:/Users/Beau Taylor-Ladd/AppData/Roaming
+User Data Directory: C:/Users/Beau Taylor-Ladd/AppData/Roaming/SlayTheSpire2
+Command Line Args: 
+User Command Line Args: 
+OS Locale: en_US
+OS Language: en
+Game Locale: en_US
+Is UserFS Persistent: True
+Is Stdout Verbose: False
+Is Low Processor Usage Mode: False
+Architecture: x86_64
+Engine Version: 4.5.1-m.12 (custom_build)
+Is Editor: False
+Release Version: v0.107.1
+Release Commit: 59260271
+Release Date: 06/18/2026 22:43:56
+Processor Count: 20
+Processor Name: 12th Gen Intel(R) Core(TM) i7-12700KF
+Main assembly hash: -1555940892
+Rendering device name: NVIDIA GeForce RTX 4070 Ti SUPER
+  Graphics adapter 0: NVIDIA GeForce RTX 4070 Ti SUPER
+  version: 32.0.16.0
+  Graphics adapter 1: NVIDIA GeForce RTX 4070 Ti SUPER
+  version: 32.0.16.0
+  Graphics adapter 2: Microsoft Basic Render Driver
+  version: 10.0.26100.0
+Screen info (primary 1):
+  Index 0: Size: (2560, 1440) Orientation: Landscape Scale: 1 DPI: 96 Refresh Rate: 59.997
+  Index 1: Size: (2560, 1440) Orientation: Landscape Scale: 1 DPI: 96 Refresh Rate: 59.997
+Video Memory Used: 0.0B
+Memory Info:
+  physical: 63.9GB
+  free: 32.3GB
+  available: 67.9GB
+  stack: 8.0MB
+  Static Memory Usage: 0.0B
+  Static Memory Peak Usage: 0.0B
+Disk Info:
+  Index 0: Name: C:\ Type: Fixed Format: NTFS Available: 35.4GB Total Free: 35.4GB Total Size: 464.8GB
+  Index 1: Name: D:\ Type: Fixed Format: NTFS Available: 38.3GB Total Free: 38.3GB Total Size: 0.9TB
+  Index 2: Name: E:\ Type: Fixed Format: NTFS Available: 189.4GB Total Free: 189.4GB Total Size: 0.9TB
+  Index 3: Name: F:\ Type: Fixed Format: NTFS Available: 1.3TB Total Free: 1.3TB Total Size: 1.8TB
+  Index 4: Name: X:\ Type: Fixed Format: NTFS Available: 2.8TB Total Free: 2.8TB Total Size: 3.6TB
+  Index 5: Name: Z:\ Type: Fixed Format: NTFS Available: 29.6GB Total Free: 29.6GB Total Size: 0.9TB
+Important Environment Variables:
+  PATH: C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\bin;%USERPROFILE%\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Programs\Ollama;
+  GODOT_ROOT_DIR: 
+  HOME: 
+  DYLD_LIBRARY_PATH: 
+  LD_LIBRARY_PATH: 
+
+[INFO] Preloading 'IntroLogo' assets... count=3 vfx=0
+[INFO] Preloading 'IntroLogo' Complete: assets=3 time_elapsed=24ms
+[INFO] Preloading 'MainMenuEssentials' assets... count=5 vfx=0
+[INFO] Preloading 'MainMenuEssentials' Complete: assets=5 time_elapsed=185ms
+[WARN] Asset not cached: res://debug_audio/SOTE_Logo_Echoing_ShortTail.mp3
+ERROR: MegaCrit.Sts2.Core.Localization.LocException: Key=SlayTheSpire2.LAN.Multiplayer.HOST_PORT not found in table=settings_ui
+   at MegaCrit.Sts2.Core.Localization.LocTable.GetRawText(String key)
+   at MegaCrit.Sts2.Core.Localization.LocString.GetRawText()
+   at MegaCrit.Sts2.Core.Localization.LocManager.SmartFormat(LocString locString, Dictionary`2 variables)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.Screens.NSettingsScreenLocalizeLabelsPatch.LocHelper_Patch1(Node settingsLineNode, LocString locString)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.Screens.NSettingsScreenLocalizeLabelsPatch.Prefix(NSettingsScreen __instance)
+   at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsScreen.LocalizeLabels_Patch1(NSettingsScreen this)
+   at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsScreen._Ready_Patch1(NSettingsScreen this)
+   at Godot.Node.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Control.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsScreen.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Bridge.CSharpInstanceBridge.Call(IntPtr godotObjectGCHandle, godot_string_name* method, godot_variant** args, Int32 argCount, godot_variant_call_error* refCallError, godot_variant* ret)
+   at: void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception) (:0)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string)
+       [1] void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception)
+       [2] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [3] void Godot.NativeInterop.NativeFuncs.godotsharp_method_bind_ptrcall(nint, nint, System.Void**, System.Void*)
+       [4] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [5] void Godot.Node.AddChild(Godot.Node, bool, Godot.Node+InternalMode)
+       [6] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [7] MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu <unknown>.MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.GetSubmenuType_Patch1(MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack, System.Type)
+       [8] T MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.GetSubmenuType<T>()
+       [9] void MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack._Ready()
+       [10] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [11] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [12] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenuStack.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [13] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [14] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [15] void Godot.NativeInterop.NativeFuncs.godotsharp_method_bind_ptrcall(nint, nint, System.Void**, System.Void*)
+       [16] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [17] void Godot.Node.AddChild(Godot.Node, bool, Godot.Node+InternalMode)
+       [18] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [19] void MegaCrit.Sts2.Core.Nodes.NSceneContainer.SetCurrentScene(Godot.Control)
+       [20] void MegaCrit.Sts2.Core.Nodes.NGame+<LoadMainMenu>d__140.MoveNext()
+       [21] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [22] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start<TStateMachine>(TStateMachine&)
+       [23] System.Threading.Tasks.Task MegaCrit.Sts2.Core.Nodes.NGame.LoadMainMenu(bool)
+       [24] void MegaCrit.Sts2.Core.Nodes.NGame+<LaunchMainMenu>d__131.MoveNext()
+       [25] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.ExecutionContextCallback(object)
+       [26] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [27] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [28] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [29] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [30] void System.Threading.Tasks.Task.RunContinuations(object)
+       [31] bool System.Threading.Tasks.Task`1.TrySetResult(TResult)
+       [32] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(System.Threading.Tasks.Task`1[TResult], TResult)
+       [33] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()
+       [34] void MegaCrit.Sts2.Core.Nodes.NTransition+<FadeOut>d__16.MoveNext()
+       [35] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [36] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [37] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [38] void System.Threading.Tasks.Task.RunContinuations(object)
+       [39] void MegaCrit.Sts2.Core.Nodes.GodotExtensions.NodeUtil+<AwaitProcessFrame>d__0.MoveNext()
+       [40] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [41] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [42] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*)
+ERROR: MegaCrit.Sts2.Core.Localization.LocException: Key=SlayTheSpire2.LAN.Multiplayer.IP_ADDRESS_TITLE not found in table=main_menu_ui
+   at MegaCrit.Sts2.Core.Localization.LocTable.GetRawText(String key)
+   at MegaCrit.Sts2.Core.Localization.LocString.GetRawText()
+   at MegaCrit.Sts2.Core.Localization.LocManager.SmartFormat(LocString locString, Dictionary`2 variables)
+   at MegaCrit.Sts2.Core.Localization.LocString.GetFormattedText()
+   at SlayTheSpire2.LAN.Multiplayer.Components.IPAddressLabel.RefreshLabel()
+   at SlayTheSpire2.LAN.Multiplayer.Components.IPAddressLabel.SetLocalization(String locKeyPrefix)
+   at SlayTheSpire2.LAN.Multiplayer.Components.IPAddressInfoPanel.AddAddressElement(Node container, String name, String locKeyPrefix, Boolean isTrim)
+   at SlayTheSpire2.LAN.Multiplayer.Components.IPAddressInfoPanel.Create()
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.Screens.RunScreenReadyPatchs.Prefix(NSubmenu __instance)
+   at MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect.NCharacterSelectScreen._Ready_Patch1(NCharacterSelectScreen this)
+   at Godot.Node.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Control.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect.NCharacterSelectScreen.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Bridge.CSharpInstanceBridge.Call(IntPtr godotObjectGCHandle, godot_string_name* method, godot_variant** args, Int32 argCount, godot_variant_call_error* refCallError, godot_variant* ret)
+   at: void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception) (:0)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string)
+       [1] void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception)
+       [2] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [3] void Godot.NativeInterop.NativeFuncs.godotsharp_method_bind_ptrcall(nint, nint, System.Void**, System.Void*)
+       [4] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [5] void Godot.Node.AddChild(Godot.Node, bool, Godot.Node+InternalMode)
+       [6] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [7] MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu <unknown>.MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.GetSubmenuType_Patch1(MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack, System.Type)
+       [8] T MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.GetSubmenuType<T>()
+       [9] void MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack._Ready()
+       [10] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [11] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [12] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenuStack.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [13] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [14] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [15] void Godot.NativeInterop.NativeFuncs.godotsharp_method_bind_ptrcall(nint, nint, System.Void**, System.Void*)
+       [16] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [17] void Godot.Node.AddChild(Godot.Node, bool, Godot.Node+InternalMode)
+       [18] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [19] void MegaCrit.Sts2.Core.Nodes.NSceneContainer.SetCurrentScene(Godot.Control)
+       [20] void MegaCrit.Sts2.Core.Nodes.NGame+<LoadMainMenu>d__140.MoveNext()
+       [21] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [22] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start<TStateMachine>(TStateMachine&)
+       [23] System.Threading.Tasks.Task MegaCrit.Sts2.Core.Nodes.NGame.LoadMainMenu(bool)
+       [24] void MegaCrit.Sts2.Core.Nodes.NGame+<LaunchMainMenu>d__131.MoveNext()
+       [25] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.ExecutionContextCallback(object)
+       [26] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [27] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [28] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [29] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [30] void System.Threading.Tasks.Task.RunContinuations(object)
+       [31] bool System.Threading.Tasks.Task`1.TrySetResult(TResult)
+       [32] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(System.Threading.Tasks.Task`1[TResult], TResult)
+       [33] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()
+       [34] void MegaCrit.Sts2.Core.Nodes.NTransition+<FadeOut>d__16.MoveNext()
+       [35] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [36] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [37] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [38] void System.Threading.Tasks.Task.RunContinuations(object)
+       [39] void MegaCrit.Sts2.Core.Nodes.GodotExtensions.NodeUtil+<AwaitProcessFrame>d__0.MoveNext()
+       [40] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [41] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [42] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*)
+[INFO] [Startup] Time to main menu (Godot ticks): 7118ms
+[INFO] [Startup] Time to main menu: 7,126ms
+[INFO] [Startup] Resource stats (main menu loaded (essential)): StaticMem=0B, VRAM=280.2MB, Objects=8,467, Resources=452, Nodes=1,477, CachedAssets=11
+[INFO] AtlasManager: Loaded epoch_atlas with 57 sprites
+[INFO] AtlasManager: Loaded relic_atlas with 341 sprites
+[INFO] AtlasManager: Loaded relic_outline_atlas with 341 sprites
+[INFO] AtlasManager: Loaded power_atlas with 264 sprites
+[INFO] AtlasManager: Loaded card_atlas with 875 sprites
+[INFO] AtlasManager: Loaded potion_atlas with 63 sprites
+[INFO] AtlasManager: Loaded potion_outline_atlas with 63 sprites
+[INFO] AtlasManager: Loaded stats_screen_atlas with 16 sprites
+[INFO] AtlasManager: Loaded intent_atlas with 310 sprites
+[INFO] AtlasManager: Loaded era_atlas with 27 sprites
+[INFO] Unloading 4 missed cache assets
+[INFO] Preloading 'Common' assets... count=686 vfx=92
+[INFO] [Startup] Resource stats (main menu loaded (complete)): StaticMem=0B, VRAM=492.3MB, Objects=8,445, Resources=452, Nodes=1,475, CachedAssets=5
+[INFO] Preloading 'Common' Complete: assets=778 time_elapsed=1,265ms
+[INFO] Wrote 2417 bytes to path=user://steam/76561198058021070/settings.save save_dir=user://steam/76561198058021070
+[INFO] Wrote 299 bytes to path=user://steam/76561198058021070/modded/profile1\saves\prefs.save save_dir=user://steam/76561198058021070
+[INFO] Wrote 299 bytes to modded/profile1/saves/prefs.save in steam remote store
+[WARN] Asset not cached: res://scenes/screens/multiplayer_submenu.tscn
+[INFO] Wrote 2417 bytes to path=user://steam/76561198058021070/settings.save save_dir=user://steam/76561198058021070
+[INFO] Wrote 299 bytes to path=user://steam/76561198058021070/modded/profile1\saves\prefs.save save_dir=user://steam/76561198058021070
+[INFO] Wrote 299 bytes to modded/profile1/saves/prefs.save in steam remote store
+[INFO] HostGame open on port:33771
+ERROR: System.NullReferenceException: Object reference not set to an instance of an object.
+   at MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect.NCharacterSelectScreen.InitializeMultiplayerAsHost_Patch1(NCharacterSelectScreen this, INetGameService gameService, Int32 maxPlayers)
+   at SlayTheSpire2.LAN.Multiplayer.Helpers.LanHostHelper.StartHost(GameMode gameMode, Control loadingOverlay, NSubmenuStack stack, UInt16 port, Int32 maxPlayers)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.Screens.NMultiplayerSubmenuReadyPatch.<>c__DisplayClass0_0.<Prefix>b__0(NButton _)
+   at Godot.Callable.<From>g__Trampoline|2_0[T0](Object delegateObj, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.DelegateUtils.InvokeWithVariantArgs(IntPtr delegateGCHandle, Void* trampoline, godot_variant** args, Int32 argc, godot_variant* outRet)
+   at: void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception) (:0)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string)
+       [1] void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception)
+       [2] void Godot.DelegateUtils.InvokeWithVariantArgs(nint, System.Void*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant*)
+       [3] int Godot.NativeCalls.godot_icall_2_873(nint, nint, Godot.NativeInterop.godot_string_name, System.ReadOnlySpan`1[Godot.Variant], Godot.NativeInterop.godot_string_name)
+       [4] Godot.Error Godot.GodotObject.EmitSignal(Godot.StringName, Godot.Variant[])
+       [5] void MegaCrit.Sts2.Core.Nodes.GodotExtensions.NClickableControl.OnReleaseHandler()
+       [6] void MegaCrit.Sts2.Core.Nodes.GodotExtensions.NClickableControl.HandleMouseRelease(Godot.InputEvent)
+       [7] void Godot.Callable.<From>g__Trampoline|2_0<T0>(object, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [8] void Godot.DelegateUtils.InvokeWithVariantArgs(nint, System.Void*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant*)
+       [9] int Godot.NativeCalls.godot_icall_2_873(nint, nint, Godot.NativeInterop.godot_string_name, System.ReadOnlySpan`1[Godot.Variant], Godot.NativeInterop.godot_string_name)
+       [10] Godot.Error Godot.GodotObject.EmitSignal(Godot.StringName, Godot.Variant[])
+       [11] void MegaCrit.Sts2.Core.Nodes.GodotExtensions.NClickableControl._GuiInput(Godot.InputEvent)
+       [12] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [13] bool MegaCrit.Sts2.Core.Nodes.GodotExtensions.NClickableControl.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [14] bool MegaCrit.Sts2.Core.Nodes.GodotExtensions.NButton.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [15] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenuButton.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [16] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+[WARN] Asset not cached: res://scenes/screens/feedback_screen/feedback_screen.tscn
+[INFO] Feedback screen opened
+[WARN] Asset not cached: res://images/atlases/compressed.sprites/feedback/flower.tres
+[INFO] Feedback screen closed
+[WARN] Asset not cached: res://scenes/screens/join_friend_submenu.tscn
+ERROR: System.InvalidOperationException: MegaLabel '/root/Game/RootSceneContainer/MainMenu/Submenus/JoinFriendSubmenu/LANOverlay/@VBoxContainer@407/@ScrollContainer@408/LANLobbyVBox/@PanelContainer@414/@HBoxContainer@411/@Label@412' has no theme font override. Please set one to avoid a Godot engine bug.
+   at MegaCrit.Sts2.addons.mega_text.MegaLabelHelper.AssertThemeFontOverride(Control control, StringName fontOverrideName)
+   at MegaCrit.Sts2.addons.mega_text.MegaLabel._Ready()
+   at Godot.Node.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Control.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.addons.mega_text.MegaLabel.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Bridge.CSharpInstanceBridge.Call(IntPtr godotObjectGCHandle, godot_string_name* method, godot_variant** args, Int32 argCount, godot_variant_call_error* refCallError, godot_variant* ret)
+   at: void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception) (:0)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string)
+       [1] void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception)
+       [2] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [3] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [4] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [5] void SlayTheSpire2.LAN.Multiplayer.Patchs.Screens.NJoinFriendScreenOnSubmenuOpenedPatch+<>c__DisplayClass1_0.<Prefix>b__0(SlayTheSpire2.LAN.Multiplayer.Models.LanLobbyInfo)
+       [6] void SlayTheSpire2.LAN.Multiplayer.Services.LanDiscoveryService+<ListenForResponses>d__13.MoveNext()
+       [7] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [8] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [9] void Godot.GodotSynchronizationContext.ExecutePendingContinuations()
+       [10] void Godot.Bridge.ScriptManagerBridge.FrameCallback()
+ERROR: System.InvalidOperationException: MegaLabel '/root/Game/RootSceneContainer/MainMenu/Submenus/JoinFriendSubmenu/LANOverlay/@VBoxContainer@407/@ScrollContainer@408/LANLobbyVBox/@PanelContainer@414/@HBoxContainer@411/@Label@413' has no theme font override. Please set one to avoid a Godot engine bug.
+   at MegaCrit.Sts2.addons.mega_text.MegaLabelHelper.AssertThemeFontOverride(Control control, StringName fontOverrideName)
+   at MegaCrit.Sts2.addons.mega_text.MegaLabel._Ready()
+   at Godot.Node.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Control.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.addons.mega_text.MegaLabel.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Bridge.CSharpInstanceBridge.Call(IntPtr godotObjectGCHandle, godot_string_name* method, godot_variant** args, Int32 argCount, godot_variant_call_error* refCallError, godot_variant* ret)
+   at: void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception) (:0)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string)
+       [1] void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception)
+       [2] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [3] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [4] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [5] void SlayTheSpire2.LAN.Multiplayer.Patchs.Screens.NJoinFriendScreenOnSubmenuOpenedPatch+<>c__DisplayClass1_0.<Prefix>b__0(SlayTheSpire2.LAN.Multiplayer.Models.LanLobbyInfo)
+       [6] void SlayTheSpire2.LAN.Multiplayer.Services.LanDiscoveryService+<ListenForResponses>d__13.MoveNext()
+       [7] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [8] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [9] void Godot.GodotSynchronizationContext.ExecutePendingContinuations()
+       [10] void Godot.Bridge.ScriptManagerBridge.FrameCallback()
+[INFO] Wrote 120 bytes to path=user://steam/76561198058021070\mods/lan_settings.json save_dir=user://steam/76561198058021070\mods
+[INFO] Attempting to join game with connection initializer MegaCrit.Sts2.Core.Multiplayer.Connection.ENetClientConnectionInitializer
+[INFO] [JoinFlow] Beginning join with initializer MegaCrit.Sts2.Core.Multiplayer.Connection.ENetClientConnectionInitializer
+[INFO] [ENetClient] Sending handshake with net ID 1000
+[DEBUG] [ENetHost] Received handshake packet containing peer ID 1000
+[DEBUG] [ENetHost] Acknowledging handshake for peer with ID 1000
+[INFO] [StartRunLobby] Client 1000 connected. Sending initial game info message
+[INFO] [JoinFlow] Initializer connection completed, awaiting initial game info message
+[INFO] [NetMessageBus] Received message MegaCrit.Sts2.Core.Multiplayer.Messages.Lobby.InitialGameInfoMessage, sending to 1 handlers
+[INFO] [JoinFlow] Got initial game info message. Version: v0.107.1 Hash: 3954186980 Type: Standard State: InLobby
+[INFO] [JoinFlow] Sending ClientLobbyJoinRequestMessage and waiting for response message
+[INFO] [NetMessageBus] Received message MegaCrit.Sts2.Core.Multiplayer.Messages.Lobby.ClientLobbyJoinRequestMessage, sending to 1 handlers
+[INFO] [StartRunLobby] Received ClientLobbyJoinRequestMessage for 1000
+[DEBUG] [StartRunLobby] Sending ClientLobbyJoinResponseMessage length (1) to (1000)
+[INFO] [StartRunLobby] Cancel handshake timeout for 1000
+[INFO] [ENetHost] Disconnecting client 1000, reason: InternalError. Now: False
+[DEBUG] [ENetHost] Peer ID 1000 disconnected, reason: InternalError
+[INFO] [StartRunLobby] Client 1000 disconnected, reason: InternalError
+[ERROR] [NetMessageBus] Exception encountered while processing message MegaCrit.Sts2.Core.Multiplayer.Messages.Lobby.ClientLobbyJoinRequestMessage: System.NullReferenceException: Object reference not set to an instance of an object.
+   at MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect.NCharacterSelectScreen.RemotePlayerDisconnected(LobbyPlayer player)
+   at MegaCrit.Sts2.Core.Multiplayer.Game.Lobby.StartRunLobby.OnDisconnectedFromClientAsHost(UInt64 playerId, NetErrorInfo info)
+   at MegaCrit.Sts2.Core.Multiplayer.NetHostGameService.OnPeerDisconnected(UInt64 peerId, NetErrorInfo info)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetHost.HandleClientDisconnection(ClientConnection conn, NetError reason, Boolean notifyHandler)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetHost.DisconnectClientInternal(UInt64 peerId, NetError reason, Boolean now, Boolean notifyHandler)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetHost.DisconnectClient(UInt64 peerId, NetError reason, Boolean now)
+   at MegaCrit.Sts2.Core.Multiplayer.NetHostGameService.DisconnectClient(UInt64 peerId, NetError reason, Boolean now)
+   at MegaCrit.Sts2.Core.Multiplayer.Game.Lobby.StartRunLobby.HandleClientLobbyJoinRequestMessage(ClientLobbyJoinRequestMessage message, UInt64 senderId)
+   at MegaCrit.Sts2.Core.Multiplayer.NetMessageBus.<>c__DisplayClass13_0`1.<RegisterMessageHandler>b__0(INetMessage message, UInt64 senderId)
+   at MegaCrit.Sts2.Core.Multiplayer.NetMessageBus.SendMessageToAllHandlers(INetMessage message, UInt64 senderId)
+   at MegaCrit.Sts2.Core.Multiplayer.NetMessageBus.SendMessageToAllHandlers(INetMessage message, UInt64 senderId)
+   at MegaCrit.Sts2.Core.Multiplayer.NetHostGameService.OnPacketReceived(UInt64 senderId, Byte[] packetBytes, NetTransferMode mode, Int32 channel)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetHost.HandlePacketReceived(ENetServiceData data)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetHost.Update()
+   at MegaCrit.Sts2.Core.Multiplayer.NetHostGameService.Update()
+   at Godot.Node.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Control.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect.NCharacterSelectScreen.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Bridge.CSharpInstanceBridge.Call(IntPtr godotObjectGCHandle, godot_string_name* method, godot_variant** args, Int32 argCount, godot_variant_call_error* refCallError, godot_variant* ret)
+
+[INFO] [NetMessageBus] Received message ClientLobbyJoinResponseMessage Players: 1 Ascension: 0, sending to 1 handlers
+[INFO] [JoinFlow] Received ClientLobbyJoinResponseMessage: ClientLobbyJoinResponseMessage Players: 1 Ascension: 0
+[DEBUG] [ENetClient] Received disconnection packet with reason: InternalError
+[INFO] [JoinFlow] Disconnected during join flow, reason: InternalError. Failing with an exception
+[ERROR] MegaCrit.Sts2.Core.Multiplayer.Connection.ClientConnectionFailedException: Unexpectedly disconnected from host while joining. Reason: InternalError
+   at SlayTheSpire2.LAN.Multiplayer.Services.LanPlayerNameService.AttemptPlayerName(NetClientGameService gameService)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.JoinFlowAttemptJoinPatch.AttemptJoin(JoinFlow joinFlow, Task`1 clientLobbyJoinResponseMessage)
+   at SlayTheSpire2.LAN.Multiplayer.Helpers.TaskGenericHelper.LogTaskExceptions[T](Task`1 task)
+   at SlayTheSpire2.LAN.Multiplayer.Helpers.TaskGenericHelper.LogTaskExceptions[T](Task`1 task)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.JoinFlowAttemptJoinPatch.AttemptJoin(JoinFlow joinFlow, Task`1 clientLobbyJoinResponseMessage)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at SlayTheSpire2.LAN.Multiplayer.Services.LanPlayerNameService.AttemptPlayerName(NetClientGameService gameService)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Threading.Tasks.TaskCompletionSource`1.TrySetException(Exception exception)
+   at System.Threading.Tasks.TaskCompletionSource`1.SetException(Exception exception)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.JoinFlowOnDisconnectedPatch.Postfix(JoinFlow __instance, NetErrorInfo info)
+   at MegaCrit.Sts2.Core.Multiplayer.Game.JoinFlow.OnDisconnected_Patch1(JoinFlow this, NetErrorInfo info)
+   at MegaCrit.Sts2.Core.Multiplayer.NetClientGameService.OnDisconnectedFromHost(UInt64 hostNetId, NetErrorInfo info)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetClient.HandleMessageReceived(ENetServiceData data)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetClient.Update()
+   at MegaCrit.Sts2.Core.Multiplayer.NetClientGameService.Update()
+   at MegaCrit.Sts2.Core.Multiplayer.Game.JoinFlow.NetServiceUpdateLoop(CancellationTokenSource token, SceneTree sceneTree)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at Godot.SignalAwaiter.SignalCallback(IntPtr awaiterGCHandlePtr, godot_variant** args, Int32 argCount, godot_bool* outAwaiterIsNull)
+
+[INFO] [JoinFlow] Disconnected during join flow, reason: InternalError. Failing with an exception
+[ERROR] Received connection failed exception while joining game: MegaCrit.Sts2.Core.Multiplayer.Connection.ClientConnectionFailedException: Unexpectedly disconnected from host while joining. Reason: InternalError
+   at SlayTheSpire2.LAN.Multiplayer.Services.LanPlayerNameService.AttemptPlayerName(NetClientGameService gameService)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.JoinFlowAttemptJoinPatch.AttemptJoin(JoinFlow joinFlow, Task`1 clientLobbyJoinResponseMessage)
+   at SlayTheSpire2.LAN.Multiplayer.Helpers.TaskGenericHelper.LogTaskExceptions[T](Task`1 task)
+   at MegaCrit.Sts2.Core.Multiplayer.Game.JoinFlow.Begin(IClientConnectionInitializer initializer, SceneTree sceneTree)
+   at MegaCrit.Sts2.Core.Multiplayer.Game.JoinFlow.Begin(IClientConnectionInitializer initializer, SceneTree sceneTree)
+   at MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NJoinFriendScreen.JoinGameAsync(IClientConnectionInitializer connInitializer)
+   at MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NJoinFriendScreen.JoinGameAsync(IClientConnectionInitializer connInitializer)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception)
+   at MegaCrit.Sts2.Core.Multiplayer.Game.JoinFlow.Begin(IClientConnectionInitializer initializer, SceneTree sceneTree)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception)
+   at SlayTheSpire2.LAN.Multiplayer.Helpers.TaskGenericHelper.LogTaskExceptions[T](Task`1 task)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.JoinFlowAttemptJoinPatch.AttemptJoin(JoinFlow joinFlow, Task`1 clientLobbyJoinResponseMessage)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at SlayTheSpire2.LAN.Multiplayer.Services.LanPlayerNameService.AttemptPlayerName(NetClientGameService gameService)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Threading.Tasks.TaskCompletionSource`1.TrySetException(Exception exception)
+   at System.Threading.Tasks.TaskCompletionSource`1.SetException(Exception exception)
+   at SlayTheSpire2.LAN.Multiplayer.Patchs.JoinFlowOnDisconnectedPatch.Postfix(JoinFlow __instance, NetErrorInfo info)
+   at MegaCrit.Sts2.Core.Multiplayer.Game.JoinFlow.OnDisconnected_Patch1(JoinFlow this, NetErrorInfo info)
+   at MegaCrit.Sts2.Core.Multiplayer.NetClientGameService.OnDisconnectedFromHost(UInt64 hostNetId, NetErrorInfo info)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetClient.HandleMessageReceived(ENetServiceData data)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.ENet.ENetClient.Update()
+   at MegaCrit.Sts2.Core.Multiplayer.NetClientGameService.Update()
+   at MegaCrit.Sts2.Core.Multiplayer.Game.JoinFlow.NetServiceUpdateLoop(CancellationTokenSource token, SceneTree sceneTree)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at Godot.SignalAwaiter.SignalCallback(IntPtr awaiterGCHandlePtr, godot_variant** args, Int32 argCount, godot_bool* outAwaiterIsNull)
+
+[INFO] Feedback screen opened
+[INFO] Feedback screen closed
+[INFO] [SteamHost] Initializing Steam host. Our player id: 76561198058021070
+[ERROR] System.NullReferenceException: Object reference not set to an instance of an object.
+   at MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect.NCharacterSelectScreen.InitializeMultiplayerAsHost_Patch1(NCharacterSelectScreen this, INetGameService gameService, Int32 maxPlayers)
+   at MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMultiplayerHostSubmenu.StartHostAsync(GameMode gameMode, Control loadingOverlay, NSubmenuStack stack)
+   at MegaCrit.Sts2.Core.Helpers.TaskHelper.LogTaskExceptions(Task task)
+   at MegaCrit.Sts2.Core.Helpers.TaskHelper.LogTaskExceptions(Task task)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.FinishSlow(Boolean userDelegateExecute)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMultiplayerHostSubmenu.StartHostAsync(GameMode gameMode, Control loadingOverlay, NSubmenuStack stack)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(Task`1 task, TResult result)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetResult(TResult result)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.Steam.SteamHost.StartHost(Int32 maxPlayers)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.TaskCompletionSource`1.TrySetResult(TResult result)
+   at System.Threading.Tasks.TaskCompletionSource`1.SetResult(TResult result)
+   at MegaCrit.Sts2.Core.Multiplayer.Transport.Steam.SteamCallResult`1.OnCallResult(T result, Boolean ioError)
+   at Steamworks.CallResult`1.OnRunCallResult(IntPtr pvParam, Boolean bFailed, UInt64 hSteamAPICall_)
+   at Steamworks.CallbackDispatcher.RunFrame(Boolean isGameServer)
+   at MegaCrit.Sts2.Core.Platform.Steam.SteamInitializer.RunCallbacksAsync(Node node)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at MegaCrit.Sts2.Core.Nodes.GodotExtensions.NodeUtil.AwaitProcessFrame(Node node, CancellationToken ct)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at Godot.SignalAwaiter.SignalCallback(IntPtr awaiterGCHandlePtr, godot_variant** args, Int32 argCount, godot_bool* outAwaiterIsNull)
+
+[INFO] Feedback screen opened
+[WARN] Asset not cached: res://images/atlases/compressed.sprites/feedback/flower_anticipation.tres
+[INFO] Feedback screen closed
+[INFO] Quit button pressed
+[INFO] Quit cancelled
+[INFO] Quit button pressed
+[INFO] Quit confirmed
+[INFO] NGame.Quit called
+[INFO] Wrote 2417 bytes to path=user://steam/76561198058021070/settings.save save_dir=user://steam/76561198058021070
+[INFO] Wrote 299 bytes to path=user://steam/76561198058021070/modded/profile1\saves\prefs.save save_dir=user://steam/76561198058021070
+[INFO] Wrote 299 bytes to modded/profile1/saves/prefs.save in steam remote store
+[INFO] Wrote 842 bytes to path=user://steam/76561198058021070/modded/profile1\saves\progress.save save_dir=user://steam/76561198058021070
+[INFO] Wrote 842 bytes to modded/profile1/saves/progress.save in steam remote store
+[INFO] Wrote 52 bytes to path=user://steam/76561198058021070/profile.save save_dir=user://steam/76561198058021070
+[INFO] Wrote 52 bytes to profile.save in steam remote store
+[INFO] Steamworks: shutting down...
+[INFO] Steamworks shutdown succeeded!
+FMOD Sound System: System released
+WARNING: 1139 RIDs of type "CanvasItem" were leaked.
+   at: _free_rids (servers/rendering/renderer_canvas_cull.cpp:2678)
+ERROR: 1 RID allocations of type 'N26RendererEnvironmentStorage11EnvironmentE' were leaked at exit.
+ERROR: 5 shaders of type CanvasShaderRD were never freed
+   at: ~ShaderRD (servers/rendering/renderer_rd/shader_rd.cpp:1044)
+ERROR: 30 RID allocations of type 'N10RendererRD16ParticlesStorage9ParticlesE' were leaked at exit.
+ERROR: 1 shaders of type ParticlesShaderRD were never freed
+   at: ~ShaderRD (servers/rendering/renderer_rd/shader_rd.cpp:1044)
+ERROR: 30 RID allocations of type 'N10RendererRD11MeshStorage4MeshE' were leaked at exit.
+ERROR: 98 RID allocations of type 'N10RendererRD15MaterialStorage8MaterialE' were leaked at exit.
+ERROR: 6 RID allocations of type 'N10RendererRD15MaterialStorage6ShaderE' were leaked at exit.
+ERROR: 32 RID allocations of type 'N10RendererRD14TextureStorage7TextureE' were leaked at exit.
+WARNING: 189 RIDs of type "UniformBuffer" were leaked.
+   at: _free_rids (servers/rendering/rendering_device.cpp:6981)
+WARNING: 59 RIDs of type "Texture" were leaked.
+   at: finalize (servers/rendering/rendering_device.cpp:7191)
+ERROR: 368 RID allocations of type 'PN18TextServerAdvanced22ShapedTextDataAdvancedE' were leaked at exit.
+ERROR: 3 RID allocations of type 'PN18TextServerAdvanced12FontAdvancedE' were leaked at exit.
+ERROR: 4 RID allocations of type 'PN18TextServerAdvanced27FontAdvancedLinkedVariationE' were leaked at exit.
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2514)
+ERROR: 70 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:795)
